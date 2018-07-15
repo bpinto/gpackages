@@ -4,6 +4,11 @@ namespace :kkuleomi do
     task init: :environment do
       Kkuleomi::Store.create_index true
     end
+
+    desc 'Updates the ElasticSearch index'
+    task update: :environment do
+      Kkuleomi::Store.create_index false
+    end
   end
 
   namespace :update do

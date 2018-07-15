@@ -56,7 +56,7 @@ else
 fi
 
 info 'Creating indexes...'
-if rake kkuleomi:index:init; then
+if rake kkuleomi:index:update; then
   success '  Created.'
 else
   error '  Creation failed.'
