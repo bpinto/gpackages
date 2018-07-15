@@ -23,7 +23,6 @@ RUN bundler install
 
 # Git clones here.
 RUN cp /var/www/packages.gentoo.org/htdocs/config/secrets.yml.dist /var/www/packages.gentoo.org/htdocs/config/secrets.yml
-RUN sed -i 's/set_me/ENV["SECRET_KEY_BASE"]/'g /var/www/packages.gentoo.org/htdocs/config/secrets.yml
 
 # Precompile our assets.
 RUN rake assets:precompile
