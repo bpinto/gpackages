@@ -36,11 +36,15 @@ module Kkuleomi::Store
     types.each { |type|
       client = type.gateway.client
       client.indices.delete(index: type.index_name) rescue nil if force
+
       body = {
         settings: type.settings.to_hash.merge(base_settings),
         mappings: type.mappings.to_hash
       }
-      client.indices.create(index: type.index_name, body: body)
+
+      unless client.indices.exists? index: type.index_name
+        client.indices.create index: type.index_name, body: body
+      end
     }
   end
 end
