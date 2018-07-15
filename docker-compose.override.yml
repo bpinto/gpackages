@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  http-serving:
+    environment:
+      - RAILS_ENV=development
+      - KKULEOMI_PORTDIR=/mnt/packages-tree/gentoo
+      - KKULEOMI_RUNTIME_PORTDIR=/mnt/packages-tree/gentoo
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/var/www/packages.gentoo.org/htdocs/
+      - packages_tree:/mnt/packages-tree/gentoo/
+  sidekiq:
+    environment:
+      - RAILS_ENV=development
+    volumes:
+      - .:/var/www/packages.gentoo.org/htdocs/
+      - packages_tree:/mnt/packages-tree/gentoo/
+
+volumes:
+  packages_tree:
