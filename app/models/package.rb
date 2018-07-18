@@ -23,6 +23,7 @@ class Package
   attribute :maintainers,     Array,  default: [], mapping: { type: 'object' }
   attribute :useflags,        Hash,   default: {}, mapping: { type: 'object' }
   attribute :metadata_hash,   String, mapping: raw_fields
+  attribute :upstream,        Hash,   default: {}, mapping: { type: 'object' }
 
   def category_model
     @category_model ||= Category.find_by(:name, category)

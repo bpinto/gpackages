@@ -63,11 +63,13 @@ module Kkuleomi::Store::Models::PackageImport
         self.homepage = homepage.split ' '
       end
 
+
       self.license = latest_ebuild.metadata[:license]
       self.licenses = split_license_str latest_ebuild.metadata[:license]
 
       self.herds = package_model.metadata[:herds]
       self.maintainers = package_model.metadata[:maintainer]
+      self.upstream = package_model.metadata[:upstream]
 
       self.longdescription = package_model.metadata[:longdescription][:en]
     end
