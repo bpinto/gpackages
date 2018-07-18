@@ -110,7 +110,7 @@ en:
   feed_keyworded_content: "%{atom} is now keyworded on these architectures: %{arches}"
   # <meta> descriptions
   desc_categories_show: "Gentoo package category %{category}: %{description}"
-  # <remote> types
+  # <upstream/remote-id> types
   bitbucket: "Bitbucket"
   cpan:
   cpan-module:

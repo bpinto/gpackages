@@ -25,8 +25,6 @@ module RemotesHelper
       "https://sourceforge.net/projects/#{id}"
     when 'sourceforge-jp'
       "http://#{id}.osdn.jp"
-    else
-      type
     end
   end
 end
