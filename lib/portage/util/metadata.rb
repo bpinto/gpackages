@@ -35,6 +35,13 @@ class Portage::Util::Metadata
       }
     end
 
+    # <upstream>/<remote-id>
+    @metadata[:upstream] = {}
+    xml.xpath('/pkgmetadata/upstream/remote-id').each do |upstream|
+      @metadata[:upstream][:remotes] ||= {}
+      @metadata[:upstream][:remotes][upstream[:type]] = clean_xml_str(upstream.inner_html)
+    end
+
     # <use>/<flag>
     @metadata[:use] = {}
     xml.xpath('/pkgmetadata/use/flag').each do |flag_tag|
