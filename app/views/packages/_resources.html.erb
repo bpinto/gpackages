@@ -31,5 +31,14 @@
       <span class="fa fa-fw fa-files-o"></span>
       <%= t :res_installed_files %> <small>(via PFL<span class="fa fa-fw fa-external-link-square"></span>)</small>
     </a>
+
+    <%- package.upstream['remotes'].each do |type, id| %>
+      <%- next unless link = generate_link(type, id) %>
+
+      <a href="<%= link %>" class="list-group-item" target="_blank">
+        <span class="fa fa-fw fa-files-o"></span>
+        <%= t type %>
+      </a>
+    <% end %>
   </div>
 </div>

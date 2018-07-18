@@ -110,3 +110,20 @@ en:
   feed_keyworded_content: "%{atom} is now keyworded on these architectures: %{arches}"
   # <meta> descriptions
   desc_categories_show: "Gentoo package category %{category}: %{description}"
+  # <remote> types
+  bitbucket: "Bitbucket"
+  cpan:
+  cpan-module:
+  cpe:
+  ctan: "CTAN"
+  freecode: "Freecode"
+  freshmeat: "Freecode"
+  gentoo:
+  github: "GitHub"
+  gitlab: "GitLab"
+  launchpad: "Launchpad"
+  pear: "PEAR"
+  pypi: "PyPI"
+  rubygems: "RubyGems"
+  sourceforge: "SourceForge"
+  sourceforge-jp: "OSDN"
